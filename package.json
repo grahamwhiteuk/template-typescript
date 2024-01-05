@@ -1,0 +1,46 @@
+{
+  "name": "template-typescript",
+  "version": "1.0.0",
+  "description": "A template for TypeScript projects",
+  "main": "dist/index.js",
+  "type": "module",
+  "author": "Graham White <graham_alton@hotmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/grahamwhiteuk/template-typescript",
+  "bugs": {
+    "url": "https://github.com/grahamwhiteuk/template-typescript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grahamwhiteuk/template-typescript.git"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "build": "yarn build:clean && tsc",
+    "build:clean": "tsc --build --clean",
+    "format": "prettier --write .",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.1",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{md,json,yaml}": [
+      "prettier --write"
+    ]
+  }
+}
